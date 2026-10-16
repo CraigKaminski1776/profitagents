@@ -5,3 +5,5 @@ header{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .tag{font-size:.75rem;background:#1e3a5a;padding:.1rem .5rem;border-radius:99px}.sub{color:#94a3b8}.price{font-size:1.4rem;font-weight:700}.box{background:#13263b;border:1px solid #c9a22755;border-radius:12px;padding:1.5rem;margin:2rem 0}
 form{display:flex;gap:.5rem;flex-wrap:wrap}input[type=email]{flex:1;padding:.6rem;border-radius:8px;border:1px solid #333;background:#0d1b2a;color:#fff}button{background:#c9a227;border:0;padding:.6rem 1.2rem;border-radius:8px;font-weight:700}
 .note{color:#fbbf24}footer{border-top:1px solid #222;padding:1.5rem 2rem;color:#94a3b8;font-size:.85rem}
+
+@media (max-width:640px){header{padding:.75rem 1rem}header nav{display:flex;flex-wrap:wrap;gap:.25rem .9rem;margin-top:.5rem}header nav a{margin-left:0;font-size:.95rem}.hero{padding:2rem 0}.hero h1{font-size:1.8rem;line-height:1.2}.btn{margin:.25rem 0}.grid{grid-template-columns:1fr}.box{padding:1rem}footer{padding:1.25rem 1rem}}
