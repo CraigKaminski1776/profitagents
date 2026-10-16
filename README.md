@@ -3,7 +3,7 @@
 AI tools and workflows for commercial lenders, brokers and real estate investors. A Globus Capital Advisors resource. Zero-dependency static site: `npm run build` → `dist/`. Hosted on Vercel; intended URL https://ai.globuscapitaladvisors.com (CNAME `ai` → `cname.vercel-dns.com`).
 
 ## TODO placeholders
-- **Stripe Payment Links**: replace `https://buy.stripe.com/TODO_*` in `build.mjs`.
+- **Stripe Payment Links**: live links wired in `SPONSOR_LINKS` / `PRODUCT_LINKS` in `build.mjs`.
 - **Newsletter form**: replace `https://formspree.io/f/TODO_FORM_ID`, or use a Google Sheet via Apps Script:
   ```js
   function doPost(e){SpreadsheetApp.getActiveSheet().appendRow([new Date(),e.parameter.email,e.parameter.source]);return ContentService.createTextOutput('Thanks! You are subscribed.');}
