@@ -10,6 +10,7 @@ Curated directory + playbooks of AI agents/tools that generate real revenue. Zer
   ```
   Deploy → Web app (execute as me, access: anyone) and use that URL as the form `action`.
 - **Affiliate IDs**: replace each tool's URL in `build.mjs` with your affiliate link.
+- **Contact**: Craig@globuscapitaladvisors.com (sponsor page + footer).
 - **Domain**: update `SITE` in `build.mjs` when a custom domain is connected.
 
 ## Payments
