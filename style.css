@@ -82,3 +82,13 @@ footer.site p{max-width:900px}footer.site b{color:#e9e5d8}
 .sub-note{font-size:.88rem;color:var(--muted);margin-top:.9rem}.checks{list-style:none;padding:0}.checks li{padding-left:1.8rem;position:relative;margin-bottom:.6rem}.checks li::before{content:"✓";position:absolute;left:0;color:var(--gold-d);font-weight:700}
 .gf{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;align-items:start}.dealform .btn{border:0}
 @media (max-width:860px){.gf{grid-template-columns:1fr}}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.form-msg{font-size:.92rem;margin-top:.8rem}.form-msg.err{color:#8a2c2c}.ok h3{color:var(--green)}.brief .ok h3{color:#fff}.brief .ok p{color:#d9d4c3}
+.ma-disc{background:#fff8e8;border:1px solid #e8d4a3;border-radius:8px;padding:.9rem 1.1rem;font-size:.9rem;color:#5a4a26;margin:0 0 1.5rem}
+.spons{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#fff3d6;color:#7a5a12;border:1px solid #e8d4a3;border-radius:4px;padding:.05rem .4rem}
+.svc{background:linear-gradient(160deg,var(--green),#14251a);color:#e9e5d8;padding:clamp(3.5rem,7vw,5rem) 0;border-top:3px solid var(--gold)}.svc h2{color:#fff}.svc .eyebrow{color:var(--gold)}.svc p{color:#d9d4c3}
+.svc-in{display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:center}.ctas.col{flex-direction:column;align-items:stretch}.ctas.col .btn{text-align:center}
+.fee{display:flex;flex-direction:column;margin:1.2rem 0}.fee span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}.fee b{font-family:var(--serif);font-size:2.6rem;color:#fff;font-weight:600}
+.btn.ghost.light{color:#fff;border-color:rgba(255,255,255,.6)}.btn.ghost.light:hover{background:#fff;color:var(--green)}
+#scr-sum,#scr-detail,#gate{margin-top:1.5rem}.factor{margin:1rem 0}.fh{display:flex;justify-content:space-between}.bar{height:8px;background:var(--sand);border-radius:99px;overflow:hidden;margin:.35rem 0}.bar i{display:block;height:100%;background:var(--gold)}
+@media (max-width:860px){.svc-in{grid-template-columns:1fr}}

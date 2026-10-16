@@ -1,1 +1,1 @@
-{"name":"globus-ai-real-estate","private":true,"scripts":{"build":"node build.mjs"}}
+{"name":"globus-ai-real-estate","private":true,"type":"module","scripts":{"build":"node build.mjs"},"dependencies":{"@vercel/blob":"2.8.2"}}
