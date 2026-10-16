@@ -73,3 +73,4 @@ footer.site p{max-width:900px}footer.site b{color:#e9e5d8}
 @media (max-width:860px){.brief-in{grid-template-columns:1fr}header nav{gap:1rem}}
 @media (max-width:640px){body{font-size:1rem}.wrap{padding:0 1.1rem}.hd{padding:.7rem 0;min-height:0}header.site{position:static}header nav{width:100%;gap:.4rem 1rem}header nav a{font-size:.88rem}header nav a.nav-cta{padding:.3rem .75rem}.grid{grid-template-columns:1fr}.card{padding:1.4rem}.ctas .btn{width:100%;text-align:center}.ctas .btn.link{width:auto}.hero::after{width:300px;height:300px;right:-90px;bottom:-90px}.featured{padding:1.25rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.dl h3{font-size:1.15rem;word-break:break-word}.dl-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-bottom:2rem}
