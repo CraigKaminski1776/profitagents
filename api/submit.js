@@ -19,15 +19,15 @@ export default async function handler(req, res) {
     await put(`leads/${type}/${id}.json`, JSON.stringify(lead, null, 2), { access: 'private', contentType: 'application/json', addRandomSuffix: false });
   } catch (e) { console.error('blob put failed', e); return res.status(500).json({ ok: false, error: 'storage' }); }
   // Free email notification via FormSubmit (no account; one-time activation by the recipient)
-  let notified = false;
+  let notified = false, notifyInfo = '';
   try {
     const to = process.env.LEADS_NOTIFY_EMAIL || 'Craig@globuscapitaladvisors.com';
     const payload = { _subject: `New ${type} lead: ${lead.name || email}`, _template: 'table', _captcha: 'false', _replyto: email, Type: type, Name: lead.name, Email: email, Page: lead.page, ...fields };
     if (type === 'financing' || type === 'feasibility-report') payload._autoresponse = `Thank you${lead.name ? ', ' + lead.name : ''}. Globus Capital Advisors received your request and will reply within one business day. For anything urgent, email Craig@globuscapitaladvisors.com. This message is an automatic acknowledgment, not a commitment to lend.`;
-    const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', Referer: 'https://ai.globuscapitaladvisors.com/' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(6000) });
+    const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', Referer: 'https://ai.globuscapitaladvisors.com/', Origin: 'https://ai.globuscapitaladvisors.com', 'User-Agent': 'Mozilla/5.0 (compatible; GlobusLeads/1.0; +https://ai.globuscapitaladvisors.com)' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(6000) });
     const j = await r.json().catch(() => ({}));
     notified = r.ok && String(j.success) === 'true';
-    if (!notified) console.warn('notify not confirmed', r.status, j);
-  } catch (e) { console.warn('notify failed', e?.message); }
-  return res.status(200).json({ ok: true, id, notified });
+    if (!notified) { notifyInfo = `${r.status} ${String(j.message || '').slice(0, 120)}`; console.warn('notify not confirmed', r.status, j); }
+  } catch (e) { notifyInfo = 'error ' + String(e?.message || e).slice(0, 120); console.warn('notify failed', e?.message); }
+  return res.status(200).json({ ok: true, id, notified, ...(notified ? {} : { notifyInfo }) });
 }
